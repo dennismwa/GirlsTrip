@@ -1,0 +1,26 @@
+[03-Oct-2025 22:26:53 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 22:27:08 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[04-Oct-2025 01:28:06 Africa/Nairobi] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 75
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[04-Oct-2025 01:28:12 Africa/Nairobi] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/vxjtgclw/tours.zuri.co.ke/tours.php on line 301
+[03-Oct-2025 22:28:25 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 22:57:55 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:07:05 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:07:05 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:07:07 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:07:07 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:07:07 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:08:47 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:41:54 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:43:55 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:47:21 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
+[03-Oct-2025 23:49:35 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /home/vxjtgclw/tours.zuri.co.ke/index.php on line 46
