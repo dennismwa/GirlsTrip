@@ -43,6 +43,71 @@ include 'includes/header.php';
 
 <!-- Hero Section with Slider -->
 <section class="hero-slider relative h-screen md:h-[600px]">
+    <?php if ($sliders && $sliders->num_rows > 0): ?>
+        <?php $slide_num = 0; ?>
+        <?php while($slider = $sliders->fetch_assoc()): ?>
+            <div class="slide <?php echo $slide_num === 0 ? 'active' : ''; ?> absolute inset-0">
+                <div class="relative h-full">
+                    <img src="/<?php echo htmlspecialchars($slider['image']); ?>" 
+                         alt="<?php echo htmlspecialchars($slider['title']); ?>" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center text-white px-4 max-w-4xl">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                                <?php echo htmlspecialchars($slider['title']); ?>
+                            </h1>
+                            <?php if ($slider['description']): ?>
+                                <p class="text-lg md:text-xl mb-8">
+                                    <?php echo htmlspecialchars($slider['description']); ?>
+                                </p>
+                            <?php endif; ?>
+                            <?php if ($slider['link_url']): ?>
+                                <a href="<?php echo htmlspecialchars($slider['link_url']); ?>" 
+                                   class="btn-primary inline-block">
+                                    <?php echo htmlspecialchars($slider['link_text'] ?? 'Explore Now'); ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php $slide_num++; ?>
+        <?php endwhile; ?>
+        
+        <!-- Slider Controls -->
+        <?php if ($sliders->num_rows > 1): ?>
+            <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transition">
+                <i class="fas fa-chevron-left text-gray-800"></i>
+            </button>
+            <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transition">
+                <i class="fas fa-chevron-right text-gray-800"></i>
+            </button>
+            
+            <!-- Dots -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+                <?php for($i = 0; $i < $sliders->num_rows; $i++): ?>
+                    <button onclick="currentSlide(<?php echo $i; ?>)" 
+                            class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
+                <?php endfor; ?>
+            </div>
+        <?php endif; ?>
+    <?php else: ?>
+        <!-- Default Hero -->
+        <div class="relative h-full bg-pink-600">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white px-4 max-w-4xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        Welcome to Girls Trip
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8">
+                        Unforgettable Adventures Designed for Women
+                    </p>
+                    <a href="/tours" class="btn-primary inline-block">
+                        Explore Tours
+                    </a>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 </section>
 
@@ -371,69 +436,4 @@ if (slides.length > 0) {
 }
 </script>
 
-<?php include 'includes/footer.php'; ?> if ($sliders && $sliders->num_rows > 0): ?>
-        <?php $slide_num = 0; ?>
-        <?php while($slider = $sliders->fetch_assoc()): ?>
-            <div class="slide <?php echo $slide_num === 0 ? 'active' : ''; ?> absolute inset-0">
-                <div class="relative h-full">
-                    <img src="/<?php echo htmlspecialchars($slider['image']); ?>" 
-                         alt="<?php echo htmlspecialchars($slider['title']); ?>" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                        <div class="text-center text-white px-4 max-w-4xl">
-                            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                                <?php echo htmlspecialchars($slider['title']); ?>
-                            </h1>
-                            <?php if ($slider['description']): ?>
-                                <p class="text-lg md:text-xl mb-8">
-                                    <?php echo htmlspecialchars($slider['description']); ?>
-                                </p>
-                            <?php endif; ?>
-                            <?php if ($slider['link_url']): ?>
-                                <a href="<?php echo htmlspecialchars($slider['link_url']); ?>" 
-                                   class="btn-primary inline-block">
-                                    <?php echo htmlspecialchars($slider['link_text'] ?? 'Explore Now'); ?>
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php $slide_num++; ?>
-        <?php endwhile; ?>
-        
-        <!-- Slider Controls -->
-        <?php if ($sliders->num_rows > 1): ?>
-            <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transition">
-                <i class="fas fa-chevron-left text-gray-800"></i>
-            </button>
-            <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transition">
-                <i class="fas fa-chevron-right text-gray-800"></i>
-            </button>
-            
-            <!-- Dots -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
-                <?php for($i = 0; $i < $sliders->num_rows; $i++): ?>
-                    <button onclick="currentSlide(<?php echo $i; ?>)" 
-                            class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-                <?php endfor; ?>
-            </div>
-        <?php endif; ?>
-    <?php else: ?>
-        <!-- Default Hero -->
-        <div class="relative h-full bg-pink-600">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center text-white px-4 max-w-4xl">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                        Welcome to Girls Trip
-                    </h1>
-                    <p class="text-lg md:text-xl mb-8">
-                        Unforgettable Adventures Designed for Women
-                    </p>
-                    <a href="/tours" class="btn-primary inline-block">
-                        Explore Tours
-                    </a>
-                </div>
-            </div>
-        </div>
-    <?php
+<?php include 'includes/footer.php'; ?>
