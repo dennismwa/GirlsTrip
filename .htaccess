@@ -1,0 +1,71 @@
+# Girls Trip - URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS (optional - uncomment if you have SSL)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Serve existing files and directories directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Route everything through index.php
+    RewriteRule ^index\.php$ - [L]
+    
+    # Handle account routes
+    RewriteRule ^account/?$ account.php [L]
+    RewriteRule ^account/bookings/?$ account/bookings.php [L]
+    RewriteRule ^account/tickets/?$ account/tickets.php [L]
+    RewriteRule ^account/profile/?$ account/profile.php [L]
+    
+    # Handle admin routes
+    RewriteRule ^admin/?$ admin/index.php [L]
+    RewriteRule ^admin/login/?$ admin/login.php [L]
+    RewriteRule ^admin/tours/?$ admin/tours.php [L]
+    RewriteRule ^admin/bookings/?$ admin/bookings.php [L]
+    RewriteRule ^admin/payments/?$ admin/payments.php [L]
+    RewriteRule ^admin/locations/?$ admin/locations.php [L]
+    RewriteRule ^admin/activities/?$ admin/activities.php [L]
+    RewriteRule ^admin/settings/?$ admin/settings.php [L]
+    
+    # Handle main routes
+    RewriteRule ^tours/?$ tours.php [L]
+    RewriteRule ^tours/([a-zA-Z0-9-]+)/?$ tour-details.php?slug=$1 [L]
+    RewriteRule ^trips/?$ trips.php [L]
+    RewriteRule ^events/?$ events.php [L]
+    RewriteRule ^locations/?$ locations.php [L]
+    RewriteRule ^location/([a-zA-Z0-9-]+)/?$ location-details.php?slug=$1 [L]
+    RewriteRule ^category/([a-zA-Z0-9-]+)/?$ category.php?slug=$1 [L]
+    RewriteRule ^activity/([a-zA-Z0-9-]+)/?$ activity.php?slug=$1 [L]
+    RewriteRule ^blog/?$ blog.php [L]
+    RewriteRule ^blog/([a-zA-Z0-9-]+)/?$ blog-post.php?slug=$1 [L]
+    RewriteRule ^about/?$ about.php [L]
+    RewriteRule ^contact/?$ contact.php [L]
+    RewriteRule ^login/?$ login.php [L]
+    RewriteRule ^logout/?$ logout.php [L]
+    RewriteRule ^register/?$ register.php [L]
+    RewriteRule ^booking/?$ bookings.php [L]
+    RewriteRule ^payment/?$ payment.php [L]
+    RewriteRule ^pay-balance/?$ pay-balance.php [L]
+    RewriteRule ^tickets/?$ tickets.php [L]
+    RewriteRule ^ticket-view/?$ ticket-view.php [L]
+    RewriteRule ^upcoming/?$ upcoming.php [L]
+</IfModule>
+
+# Security Settings
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(config\.php|\.htaccess)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
