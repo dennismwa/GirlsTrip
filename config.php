@@ -10,7 +10,7 @@ define('DB_NAME', 'vxjtgclw_trip');
 
 // Site Configuration
 define('SITE_NAME', 'Girls Trip');
-define('SITE_URL', 'https://yourdomain.com');
+define('SITE_URL', 'https://tours.zuri.co.ke'); // UPDATE THIS WITH YOUR ACTUAL DOMAIN
 define('SITE_EMAIL', 'info@girlstrip.co.ke');
 define('TIMEZONE', 'Africa/Nairobi');
 
@@ -22,12 +22,14 @@ try {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        error_log("Database connection failed: " . $conn->connect_error);
+        die("We're experiencing technical difficulties. Please try again later.");
     }
     
     $conn->set_charset("utf8mb4");
 } catch (Exception $e) {
-    die("Database connection error: " . $e->getMessage());
+    error_log("Database connection error: " . $e->getMessage());
+    die("We're experiencing technical difficulties. Please try again later.");
 }
 
 // Helper Functions
@@ -182,8 +184,6 @@ function sendEmail($to, $subject, $message) {
 // M-Pesa STK Push Function (placeholder)
 function initiateMpesaPayment($phone, $amount, $reference) {
     // Implement M-Pesa API integration here
-    // This is a placeholder - you'll need to integrate with Safaricom's Daraja API
-    
     $mpesa_shortcode = getSetting('mpesa_shortcode');
     $consumer_key = getSetting('mpesa_consumer_key');
     $consumer_secret = getSetting('mpesa_consumer_secret');
